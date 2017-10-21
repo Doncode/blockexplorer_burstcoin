@@ -46,17 +46,8 @@ INSTRUCTIONS:
 
 5. Enable following Cronjobs (SSH > crontab -e)  (here Unix):
 
- * * * * * php /var/www/pfad/zur/burstcoinseite/app/tasks/index.php
- * * * * * sleep 5; php /var/www/pfad/zur/burstcoinseite/app/tasks/index.php -- action=cycle
- * * * * * sleep 10; php /var/www/pfad/zur/burstcoinseite/app/tasks/index.php
- * * * * * sleep 15; php /var/www/pfad/zur/burstcoinseite/app/tasks/index.php -- action=cycle
- * * * * * sleep 20; php /var/www/pfad/zur/burstcoinseite/app/tasks/index.php
- * * * * * sleep 25; php /var/www/pfad/zur/burstcoinseite/app/tasks/index.php -- action=cycle
- * * * * * sleep 30; php /var/www/pfad/zur/burstcoinseite/app/tasks/index.php
- * * * * * sleep 35; php /var/www/pfad/zur/burstcoinseite/app/tasks/index.php -- action=cycle
- * * * * * sleep 40; php /var/www/pfad/zur/burstcoinseite/app/tasks/index.php
- * * * * * sleep 45; php /var/www/pfad/zur/burstcoinseite/app/tasks/index.php -- action=cycle
- * * * * * sleep 50; php /var/www/pfad/zur/burstcoinseite/app/tasks/index.php
- * * * * * sleep 55; php /var/www/pfad/zur/burstcoinseite/app/tasks/index.php -- action=cycle
+ * * * * * /usr/bin/wget -o /dev/null -O /dev/null http://localhost/crontab5?action=cycle
+ * * * * * sleep 5; /usr/bin/wget -o /dev/null -O http://localhost/crontab5?limit=10
+ * * * * * sleep 35; /usr/bin/wget -o /dev/null -O http://localhost/crontab5?limit=10
 
 Done.
