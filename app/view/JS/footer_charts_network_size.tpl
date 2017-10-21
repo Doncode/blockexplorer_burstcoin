@@ -4,7 +4,7 @@ $(function() {
 	  text: 'Estimated Network Size'
       },
       subtitle: {
-	  text: 'Source: burstcoin.biz'
+	  text: 'Source: Burstcoin'
       },
       xAxis: {
 	  type: 'datetime',

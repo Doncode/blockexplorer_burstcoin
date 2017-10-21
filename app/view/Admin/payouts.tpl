@@ -97,7 +97,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>burstcoin.biz Verdienst:</td>
+                    <td>Burstcoin Verdienst:</td>
                     <td>
                       {$burstIncome = $surfpointsEuro-$burstEuro-$unconfirmedPayouts}
                       {$burstIncome|number_format:2} €

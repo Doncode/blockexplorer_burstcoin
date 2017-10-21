@@ -4,7 +4,7 @@ $(function() {
 	  text: 'Total Forged Blocks per day to: {$addressdata.accountRS}'
       },
       subtitle: {
-	  text: 'Source: burstcoin.biz'
+	  text: 'Source: burstcoin'
       },
       xAxis: {
 	  type: 'datetime',

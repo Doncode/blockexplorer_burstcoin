@@ -4,7 +4,7 @@ $(function() {
 	  text: 'Total Burstcoins In Circulation'
       },
       subtitle: {
-	  text: 'Source: burstcoin.biz'
+	  text: 'Source: Burstcoin'
       },
       xAxis: {
 	  type: 'datetime',

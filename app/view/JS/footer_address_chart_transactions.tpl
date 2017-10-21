@@ -4,7 +4,7 @@ $(function() {
 	  text: 'No. of transactions per day for: {$addressdata.accountRS}'
       },
       subtitle: {
-	  text: 'Source: burstcoin.biz'
+	  text: 'Source: Burstcoin'
       },
       xAxis: {
 	  type: 'datetime',

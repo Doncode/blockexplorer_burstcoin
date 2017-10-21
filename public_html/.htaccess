@@ -1,0 +1,23 @@
+php_value memory_limit 1G
+
+AddType application/vnd.ms-fontobject    .eot
+AddType application/x-font-opentype      .otf
+AddType image/svg+xml                    .svg
+AddType application/x-font-ttf           .ttf
+AddType application/font-woff            .woff
+AddType application/font-woff2           .woff2
+
+Header set Access-Control-Allow-Origin "*"
+<FilesMatch ".(eot|ttf|otf|woff)">
+	Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_URI} !=/favicon.ico 
+RewriteRule ^(.*)$ index.php?p=/$1 [L,QSA]
+
+

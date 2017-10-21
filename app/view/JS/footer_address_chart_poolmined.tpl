@@ -4,7 +4,7 @@ $(function() {
 	  text: 'Pool Mined Burst per day for: {$addressdata.accountRS}'
       },
       subtitle: {
-	  text: 'Source: burstcoin.biz'
+	  text: 'Source: burstcoin'
       },
       xAxis: {
 	  type: 'datetime',

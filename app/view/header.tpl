@@ -3,9 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">   
-    <title>{$siteTitle|default:"Burstcoin Block-Explorer"} - burstcoin.biz</title>
-        
-    <link href="{$httpRoot}favicon.ico" rel="shortcut icon">
+    <title>{$siteTitle|default:"Burstcoin Block-Explorer"} - burstcoin</title>
+    <link href="favicon.ico" rel="shortcut icon">
     {*<link href="{$httpRoot}assets/css/style.css" rel="stylesheet">
     <link href="{$httpRoot}assets/css/theme.css" rel="stylesheet">
     <link href="{$httpRoot}assets/css/ui.css" rel="stylesheet">
@@ -55,25 +54,27 @@
 		<i class="icon-bar-chart"></i><span>Stats</span>
 	      </a>
             </li>
-            <li{$navDownloads}>
-	      <a href="{$httpRoot}downloads">
-		<i class="icon-cloud-download"></i><span>Downloads</span>
+              <li{$navCalculator}>
+	      <a href="{$httpRoot}calculator">
+		<i class="icon-calculator"></i><span>Calculator</span>
 	      </a>
             </li>
+          <li{$navFaucet}>
+              <a href="{$httpRoot}faucet">
+                  <i class="icon-layers"></i><span>Faucet</span>
+              </a>
+
             <li class="nav-parent{$navTools}">
               <a href="#"><i class="icon-wrench"></i><span>Tools</span> <span class="fa arrow"></span></a>
               <ul class="children collapse">
-                <li{$navCalculator}><a href="{$httpRoot}calculator"> Calculator</a></li>
+                <li{$navCalculator}><a href="{$httpRoot}downloads"> Downloads</a></li>
                 <li{$navPools}><a href="{$httpRoot}pools"> Pools</a></li>
                 <li{$navChat}><a href="{$httpRoot}chat"> Chat</a></li>
               </ul>
             </li>
-           <li{$navExplorer}>
-              <a href="{$httpRoot}faucet">
-                <i class="icon-layers"></i><span>Faucet</span>
-              </a>
+
 	   <li{$navexplorer}>
-              <a href="http://util.burst-team.us:8888/asset" target="_blank">
+              <a href="http://status.burstcontrol.com:7777/network" target="_blank">
               <i class="icon-bar-chart"></i><span>Asset Overview</span>
 	      </a>
            </li>
@@ -104,7 +105,7 @@
               <!-- BEGIN MESSAGES DROPDOWN -->
               <li class="dropdown" id="messages-header">
                 <a href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                <span class="text-muted">1 Burst = {$globalStats.burstBTC}&nbsp;</span> 
+                <span class="text-muted">1 Burst = {$globalStats.burstBTC|number_format:8}&nbsp;</span>
                 <i class="fa fa-bitcoin"></i>
                 </a>
                 <ul class="dropdown-menu">

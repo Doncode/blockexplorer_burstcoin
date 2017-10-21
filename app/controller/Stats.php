@@ -41,7 +41,7 @@ class ControllerStats extends Controller {
                 
                 // Berechnung der Markt Kapitalisierung
                 $globalStatsData = $this->db->query("SELECT * FROM ".DB_PRE."stats"); 
-                $totalBlockReward = $this->db->query("SELECT SUM(blockReward) AS blockrewards FROM ".DB_PRE."chain_blocks WHERE height<>'0'");
+                $totalBlockReward = $this->db->query("SELECT SUM(blockReward) AS blockrewards FROM ".DB_PRE."chain_blocks ");
                 $this->smarty->assign('marketCapUSD', $totalBlockReward[0]['blockrewards']*$globalStatsData[0]['burstBTC']*$globalStatsData[0]['btcUSD']);
                 $this->smarty->assign('marketCapEUR', $totalBlockReward[0]['blockrewards']*$globalStatsData[0]['burstBTC']*$globalStatsData[0]['btcEUR']);
                 $this->smarty->assign('totalMinedCoins', $totalBlockReward[0]['blockrewards']);

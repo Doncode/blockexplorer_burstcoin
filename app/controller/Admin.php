@@ -134,7 +134,7 @@ $myfile = file_put_contents('CALLTHISFILEHOWEVERYOUWANT.txt', $txt.PHP_EOL , FIL
                                                 ),
                                         );
                                         $context  = stream_context_create($options);
-                                        $result = file_get_contents("http://".BURST_API.":8125/burst", false, $context);
+                                        $result = file_get_contents("http://".BURST_API."/burst", false, $context);
                                         $content = json_decode($result, true);
                                         if (isset($content['transaction'])) {
                                                 // Ziehe den Betrag vom Account ab

@@ -1,7 +1,7 @@
 {include file="header.tpl" navHome=" class='nav-active active'"}
 	  {$errorMsg}
           <div class="header">
-            <h2><strong>Home</strong> <small>Welcome to Burstcoin.biz</small></h2>
+            <h2><strong>Home</strong> <small>Welcome to Burstcoin</small></h2>
           </div>
           <div class="row">
             <div class="col-xlg-12">
@@ -45,7 +45,7 @@
 		    
 {include file="Ads/leader_middle.tpl"}
 		    
-          <div class="row">
+          <div class="row" style="display: none">
             <div class="col-xlg-12">
               <div class="row">
                 <div class="col-sm-3 col-xs-6">

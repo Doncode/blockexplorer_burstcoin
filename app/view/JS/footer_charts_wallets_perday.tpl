@@ -4,7 +4,7 @@ $(function() {
 	  text: 'New Wallets Per Day'
       },
       subtitle: {
-	  text: 'Source: burstcoin.biz'
+	  text: 'Source: Burstcoin'
       },
       xAxis: {
 	  type: 'datetime',

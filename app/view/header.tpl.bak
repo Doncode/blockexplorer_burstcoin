@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">   
-    <title>{$siteTitle|default:"Burstcoin Block-Explorer"} - burstcoin.biz</title>
+    <title>{$siteTitle|default:"Burstcoin Block-Explorer"} - burstcoin</title>
         
     <link href="{$httpRoot}favicon.ico" rel="shortcut icon">
     {*<link href="{$httpRoot}assets/css/style.css" rel="stylesheet">

@@ -1,4 +1,4 @@
-{include file="header.tpl" siteTitle="Downloads" navDownloads=" class='nav-active active'"}
+{include file="header.tpl" siteTitle="Downloads" navTools=" nav-active active" navDownloads=" class='nav-active active'"}
           <div class="header">
             <h2>
 	      <strong>Downloads</strong>

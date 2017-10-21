@@ -91,5 +91,8 @@ $routing = array(
     '/login/logout' => array('Login', 'logout', ROUTING_MAIN),
     '/login/resend-password' => array('Login', 'password', ROUTING_MAIN),
     '/login/resend-password/check' => array('Login', 'passwordCheck', ROUTING_MAIN),
-    '/login/reset-password/(*)' => array('Login', 'passwordReset', ROUTING_MAIN)
+    '/login/reset-password/(*)' => array('Login', 'passwordReset', ROUTING_MAIN),
+    
+    '/crontab5' =>  array('TaskManager', 'index', ROUTING_MAIN),
+        
 );

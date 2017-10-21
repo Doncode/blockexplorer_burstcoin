@@ -433,7 +433,7 @@ class ControllerCharts extends Controller {
                 $this->smarty->assign('jsStocks', true);
                 
                 // Auslesen der Blöcke
-                $blockData = $this->db->query("SELECT baseTarget, DATE_FORMAT(blockdate,'%Y') AS blockyear, DATE_FORMAT(blockdate,'%m') AS blockmonth, DATE_FORMAT(blockdate,'%e') AS blockday, DATE_FORMAT(blockdate,'%k') AS blockhour, DATE_FORMAT(blockdate,'%i') AS blockmin FROM ".DB_PRE."chain_blocks WHERE height<>'0' ORDER BY height ASC");
+                $blockData = $this->db->query_cache("SELECT baseTarget, DATE_FORMAT(blockdate,'%Y') AS blockyear, DATE_FORMAT(blockdate,'%m') AS blockmonth, DATE_FORMAT(blockdate,'%e') AS blockday, DATE_FORMAT(blockdate,'%k') AS blockhour, DATE_FORMAT(blockdate,'%i') AS blockmin FROM ".DB_PRE."chain_blocks WHERE height<>'0' ORDER BY height ASC", DB_MAX_CACHE_TIME);
                 $i = 0;
                 $baseTarget = 0;
                 foreach ($blockData AS $blockdata) {

@@ -17,7 +17,7 @@
                 <div class="panel-content bg-dark">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                      <p>Got new ideas for burstcoin.biz or found a bug?<br>Share your feedback with us.</p>
+                      <p>Got new ideas for burstcoin or found a bug?<br>Share your feedback with us.</p>
 		      {$errorMsg}
 		      <br>		      
                       <form action="{$httpUrl}contact/check" method="post" role="form" class="form-horizontal form-validation">

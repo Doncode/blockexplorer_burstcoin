@@ -12,26 +12,43 @@
 	    <div class="col-xs-12 col-lg-6">
 	      <div class="panel">
 		<div class="panel-header">
-		  <h3><strong>Faucet</strong></h3>
+		  <h3><strong> </strong></h3>
 		</div>
 		<div class="panel-content p-t-0">
-		  <p>
-		    Enter your Burst address and fill out the captcha to win 1 or 2 Burstcoins.<br>
-		    This is a one time faucet to get you started with your free Burst! You will not be able to claim more than once.
-		  </p>
+		  {*<p>*}
+		    {*Enter your Burst address and fill out the captcha to win 1 Burstcoins.<br>*}
+		    {*This is a one time faucet to get you started with your free Burst! You will not be able to claim more than once.*}
+		  {*</p>*}
+			<p>
+				<b>
+				This faucet only for  <a href="https://fastpool.info" target="_blank">https://fastpool.info</a> miners.<br />
+				</b>
+				Please return some coin to the address <b>{{$smarty.const.FAUCET_RC}}</b> when you earn it<br />
+			</p>
 		  <div id="faucetResult"></div>
 		  <form action="{$httpUrl}faucet/check" role="form" id="faucetForm">
 		    <div class="form-group">
 		      <label for="name">Your address</label>
 		      <input type="text" name="address" class="form-control" placeholder="Enter your Burst address">
 		    </div>
+		    {*<div class="form-group">*}
+		      {*<div class="g-recaptcha" data-sitekey="{{$smarty.const.RECAPTCHA_PUBLIC}}"></div>*}
+		    {*</div>*}
 		    <div class="form-group">
-		      <div class="g-recaptcha" data-sitekey="................-78"></div>
-		    </div>
+				<script src="https://coinhive.com/lib/captcha.min.js" async></script>
+				<div class="coinhive-captcha" data-hashes="{{$smarty.const.COINHIVE_COM_HASHES}}" data-key="{{$smarty.const.COINHIVE_COM_PUBLIC}}">
+					<em>Loading Captcha...<br>
+						If it doesn't load, please disable Adblock!</em>
+				</div>
+			</div>
 		    <button type="submit" class="btn btn-primary btn-lg btn-block" id="faucetBtn">Claim <span class="glyphicon glyphicon-chevron-right"></span></button>
 		  </form>
 		  <br>
-		  <p class="no-margin">This faucet runs on donations. If you like burstcoin.biz or this faucet please send us a <a href="{$httpUrl}address/4110509879399027741">donation</a>. This restrictive faucet only for newcomers runs on donations. The Faucet is one use only, additional attempts to withdraw will be refused.</p>
+		  <p class="no-margin">
+			  {*This faucet runs on donations.<br />*}
+			  {*If you like burstcoin or this faucet please send us a <a href="{$httpUrl}address/{{$smarty.const.FAUCET_ID}}">donation {{$smarty.const.FAUCET_RC}}</a>. <br />*}
+			  {*restrictive faucet only for newcomers runs on donations. The Faucet is one use only, additional attempts to withdraw will be refused.*}
+		  </p>
 		</div>
 	      </div>
 	    </div>
@@ -76,4 +93,9 @@
 	      </div>
 	    </div>
 	  </div>
+		<div style="text-align: center">
+			<iframe data-aa='639393' src='//ad.a-ads.com/639393?size=468x60' scrolling='no' style='width:468px; height:60px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>
+			<iframe data-aa='639393' src='//ad.a-ads.com/639393?size=468x60' scrolling='no' style='width:468px; height:60px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>
+		</div>
+
  {include file="footer.tpl" loadJSCountUp="1" footerJS="faucet"}

@@ -1,4 +1,4 @@
-{include file="header.tpl" siteTitle="Burstcoin Price and Mining Calculator" navTools=" nav-active active" navCalculator=" class='active'"}
+{include file="header.tpl" siteTitle="Burstcoin Price and Mining Calculator" navCalculator=" class='active'"}
           <div class="header">
             <h2><strong>Calculator</strong></h2>
 	    <div class="breadcrumb-wrapper">

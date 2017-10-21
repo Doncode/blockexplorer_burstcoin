@@ -27,8 +27,8 @@
                     },
                     subtitle: {
                         text: document.ontouchstart === undefined ?
-                                'Source: burstcoin.biz | Click and drag in the chart area to zoom in' :
-                                'Source: burstcoin.biz | Pinch the chart to zoom in'
+                                'Source: Burstcoin | Click and drag in the chart area to zoom in' :
+                                'Source: Burstcoin | Pinch the chart to zoom in'
                     },
                     xAxis: {
                         categories: [

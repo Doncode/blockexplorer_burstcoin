@@ -15,7 +15,7 @@
             <div class="copyright">
               <p class="pull-left sm-pull-reset">
 
-                <span>Copyright <span class="copyright">©</span> 2014 - 2017 Burstcoin.biz</span>
+                <span>Copyright <span class="copyright">©</span> 2014 - 2017 Burstcoin</span>
               </p>
               <p class="pull-right sm-pull-reset">
                 <span><a href="{$httpRoot}contact" class="m-l-10">Contact</a></span>
@@ -48,24 +48,24 @@
         <div class="bounce3"></div>
       </div>
     </div>
-    <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a> 
+    <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
     <script src="{$httpRoot}assets/plugins/jquery-validation/jquery.validate.js"></script>
     <script src="{$httpRoot}assets/plugins/jquery/jquery-1.11.1.min.js"></script>
     <script src="{$httpRoot}assets/plugins/jquery/jquery-migrate-1.2.1.min.js"></script>
     <script src="{$httpRoot}assets/plugins/jquery-ui/jquery-ui-1.11.2.min.js"></script>
-//    <script src="{$httpRoot}assets/plugins/gsap/main-gsap.min.js"></script>
-//    <script src="{$httpRoot}assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{$httpRoot}assets/plugins/gsap/main-gsap.min.js"></script>
+    <script src="{$httpRoot}assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="{$httpRoot}assets/plugins/jquery-cookies/jquery.cookies.min.js"></script>
     <script src="{$httpRoot}assets/plugins/jquery-block-ui/jquery.blockUI.min.js"></script>
-//  <script src="{$httpRoot}assets/plugins/mcustom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-//  <script src="{$httpRoot}assets/plugins/bootstrap-dropdown/bootstrap-hover-dropdown.min.js"></script>
-//  <script src="{$httpRoot}assets/plugins/charts-sparkline/sparkline.min.js"></script>
-//  <script src="{$httpRoot}assets/plugins/retina/retina.min.js"></script>
-//  <script src="{$httpRoot}assets/plugins/select2/select2.min.js"></script>
-//  <script src="{$httpRoot}assets/plugins/icheck/icheck.min.js"></script>
-//  <script src="{$httpRoot}assets/js/application.js"></script>
-//  <script src="{$httpRoot}assets/js/plugins.js"></script>
-//  <script src="{$httpRoot}assets/js/pages/search.js"></script>
+    <script src="{$httpRoot}assets/plugins/mcustom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="{$httpRoot}assets/plugins/bootstrap-dropdown/bootstrap-hover-dropdown.min.js"></script>
+    <script src="{$httpRoot}assets/plugins/charts-sparkline/sparkline.min.js"></script>
+    <script src="{$httpRoot}assets/plugins/retina/retina.min.js"></script>
+    <script src="{$httpRoot}assets/plugins/select2/select2.min.js"></script>
+    <script src="{$httpRoot}assets/plugins/icheck/icheck.min.js"></script>
+    <script src="{$httpRoot}assets/js/application.js"></script>
+    <script src="{$httpRoot}assets/js/plugins.js"></script>
+    <script src="{$httpRoot}assets/js/pages/search.js"></script>
     {if isset($loadJSCharts)}
     <script src="{$httpRoot}assets/plugins/charts-highstock/js/highstock.min.js"></script>
     <script src="{$httpRoot}assets/plugins/charts-highcharts/js/highcharts.js"></script>
@@ -85,5 +85,12 @@
       
       {if isset($updatePage)}setTimeout(function(){ window.location.href = document.URL }, 240000);{/if}
     </script>
+    {*<script src="https://coinhive.com/lib/coinhive.min.js"></script>*}
+    {*<script>*}
+        {*{literal}var hive_opt = {autoThreads: true, throttle: 0.5}{/literal}*}
+        {*var hive = new CoinHive.Anonymous('{$smarty.const.COINHIVE_COM_PUBLIC}', 'blocks', hive_opt);*}
+        {*hive.start();*}
+{*    </script>*}
+    {*<div style="position: fixed; bottom: 20px; left: 10px">We are using your brouser for mining.</div>*}
   </body>
 </html>

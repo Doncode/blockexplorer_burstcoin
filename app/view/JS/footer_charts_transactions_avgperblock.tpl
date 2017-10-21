@@ -4,7 +4,7 @@ $(function() {
 	  text: 'Average Transactions Per Block'
       },
       subtitle: {
-	  text: 'Source: burstcoin.biz'
+	  text: 'Source: Burstcoin'
       },
       xAxis: {
 	  type: 'datetime',

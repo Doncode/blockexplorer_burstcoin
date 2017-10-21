@@ -1,5 +1,7 @@
 <?php
-class ModelWallet extends Model {       
+class ModelWallet extends Model {
+
+        private $curl = null;
         /**
          * Sendet Anfrage an die Wallet API.
          * @param varchar $requestType Name des Requests
@@ -9,10 +11,63 @@ class ModelWallet extends Model {
          * @return boolean Lifert false falls Wallet offline ist oder die Anfrage ungültig ist.
          */
         public function request($requestType, $parameter = '', $returnError = false) {
-                if ($handle = fopen("http://".BURST_API.":8125/burst?requestType=$requestType&$parameter", "rb")) {
+                $t10 = microtime(true);
+                $url = "http://".BURST_API."/burst?requestType=$requestType&$parameter";
+
+                if (is_null($this->curl)) {
+                    $this->curl = curl_init();
+//                    curl_setopt($this->curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+                    curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, true);
+                }
+                curl_setopt($this->curl, CURLOPT_URL, $url);
+
+                $data = curl_exec($this->curl);
+//                print_r($data);
+                if($data){
+                    $t20 =  microtime(true);
+                    echo $t20 - $t10, "\t", $url, PHP_EOL;
+                    $content = json_decode($data, true);
+//                    print_r($data);
+
+                    // Setze den Status der Wallet auf online
+                    $this->db->query("UPDATE ".DB_PRE."stats SET walletstatus='1'");
+                    // Gebe die API-Daten nur zurück wenn kein Fehler vorliegt
+                    if (!isset($content['errorCode'])) {
+                        return $content;
+                    } elseif ($returnError == true AND isset($content['errorCode'])) {
+                        return $content;
+                    }
+                } else {
+                    $this->db->query("UPDATE ".DB_PRE."stats SET walletstatus='0'");
+                }
+
+
+//                if ($handle = fopen($url, "rb")) {
+//                        $content = json_decode(stream_get_contents($handle), true);
+//                        fclose($handle);
+//                        $t20 =  microtime(true);
+//                        echo $t20 - $t10, "\t", $url, PHP_EOL;
+//
+//                        // Setze den Status der Wallet auf online
+//                        $this->db->query("UPDATE ".DB_PRE."stats SET walletstatus='1'");
+//                        // Gebe die API-Daten nur zurück wenn kein Fehler vorliegt
+//                        if (!isset($content['errorCode'])) {
+//                                return $content;
+//                        } elseif ($returnError == true AND isset($content['errorCode'])) {
+//                                return $content;
+//                        }
+//
+//                } else {
+//                        // Setze den Status der Wallet auf offline
+//                        $this->db->query("UPDATE ".DB_PRE."stats SET walletstatus='0'");
+//                }
+                                $url = "http://".BURST_API."/burst?requestType=$requestType&$parameter";
+                if ($handle = fopen($url, "rb")) {
                         $content = json_decode(stream_get_contents($handle), true);
                         fclose($handle);
-                        
+                        $t20 =  microtime(true);
+                        echo $t20 - $t10, "\t", $url, PHP_EOL;
+
                         // Setze den Status der Wallet auf online
                         $this->db->query("UPDATE ".DB_PRE."stats SET walletstatus='1'");
                         // Gebe die API-Daten nur zurück wenn kein Fehler vorliegt
@@ -21,12 +76,12 @@ class ModelWallet extends Model {
                         } elseif ($returnError == true AND isset($content['errorCode'])) {
                                 return $content;
                         }
-                        
+
                 } else {
                         // Setze den Status der Wallet auf offline
                         $this->db->query("UPDATE ".DB_PRE."stats SET walletstatus='0'");
                 }
-                
+
                 return false;
         }
         
@@ -37,7 +92,9 @@ class ModelWallet extends Model {
          */
         public function syncBlock($height) {
                 // Lese die Blockdaten aus
+                $t10 = microtime(true);
                 if ($walletData = $this->request('getBlock', 'height='.$height.'&includeTransactions=true')) {
+
                         // Lese vorherigen Block aus um zu berechnen wie schnell dieser Block gefunden wurde
                         $duration = 0;
                         if ($walletData['height'] > 0) {
@@ -220,7 +277,7 @@ class ModelWallet extends Model {
          * @return boolean Liefert true zurück falls dieser Account bereits existiert. 
          */
         public function addAccount($account, $firstseen, $forgedBlock = 0) {
-                $this->db->query("SELECT account FROM ".DB_PRE."chain_accounts WHERE account='".$account."'");
+                $this->db->query("SELECT account FROM ".DB_PRE."chain_accounts WHERE account='".$account."' LIMIT 1");
                 if ($this->db->numRows > 0) {
                         return true;
                 } else {

@@ -6,12 +6,12 @@ date_default_timezone_set('Europe/Berlin');
 
 // Paths
 define('DS', DIRECTORY_SEPARATOR);
-define('DIR_SYSTEM', 'D:\xampp\htdocs\.....');
-define('DIR_PUBLIC', 'D:\xampp\htdocs\.....\httpdocs');
+define('DIR_SYSTEM', __DIR__.'/../');
+define('DIR_PUBLIC', __DIR__.'/../public_html/');
 
 // Routing
-define('ROUTING_MAIN', 'burstcoin.biz');
-define('ROUTING_API', 'burstcoin.biz');
+define('ROUTING_MAIN', 'blocks.fastpool.info');
+define('ROUTING_API', 'blocks.fastpool.info');
 
 // Smarty
 define('SMARTY_SPL_AUTOLOAD', 1);
@@ -32,8 +32,8 @@ define('DB_CHARSET', 'utf8');
 
 // Internationalisierung
 define('LANGUAGE', true);
-define('LANGUAGES', 'de,en');
-define('LANGUAGE_DEFAULT', 'de');
+define('LANGUAGES', 'en,de,ru');
+define('LANGUAGE_DEFAULT', 'en');
 
 // Mailer
 define('SMTP_HOST', 'domain.com');
@@ -46,7 +46,7 @@ define('MAIL_REPLY', 'info@domain.com');
 define('MAIL_REPLY_NAME', 'Domain.com Support');
 
 // Kontakt
-define('CONTACT_FORM', 'info@domain.com');
+define('CONTACT_FORM', 'info@fastpool.info');
 
 // Adresse der Burst API
 define('BURST_API', '127.0.0.1');
@@ -56,8 +56,17 @@ define('BURST_EXIST', 1407722400);
 
 // Faucet
 define('FAUCET_PW', 'faucet_wallet_pass');
+define('FAUCET_ID', '13031614675276222682');
+define('FAUCET_RC', 'BURST-QN8U-J4ST-RVTC-DSEQB');
 
 // Surfbar
 define('SURFBAR_API', 'ebesucher_username:ebesucher_api_key');
 define('SURFBAR_VALUE', 0.0000190); // Wert in Euro pro SP
 define('SURFBAR_PW', 'surfbar_wallet_pass');
+
+//define('RECAPTCHA_PUBLIC', '-------');
+//define('RECAPTCHA_SECRET', '-------');
+
+define('COINHIVE_COM_PUBLIC', '-------');
+define('COINHIVE_COM_SECRET', '-------');
+define('COINHIVE_COM_HASHES', 4096);

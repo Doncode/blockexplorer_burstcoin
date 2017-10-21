@@ -4,7 +4,7 @@ $(function() {
 	  text: 'Blockchain Size'
       },
       subtitle: {
-	  text: 'Source: burstcoin.biz'
+	  text: 'Source: Burstcoin'
       },
       xAxis: {
 	  type: 'datetime',

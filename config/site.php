@@ -59,17 +59,14 @@ $conf['transactiontypes'] =
 
 // Pools
 $conf['pools'] = array(
-        0 => array('name' => 'DevPool v2', 'addr' => '21869187791279079', 'url' => 'http://178.62.39.204:8121/'),
-        1 => array('name' => 'burst.ninja', 'addr' => '12468105956737329840', 'url' => 'http://burst.ninja/'),
-        2 => array('name' => 'Burst Team Pool', 'addr' => '11894018496043975481', 'url' => 'http://pool.burst-team.us/'),
-        3 => array('name' => 'tompool.org', 'addr' => '392861956774712841', 'url' => 'http://www.tompool.org/'),
-        4 => array('name' => 'Burstcoin.biz Pool', 'addr' => '14789046051569562492', 'url' => 'http://pool.burstcoin.biz/'),
-        5 => array('name' => 'European Pool', 'addr' => '18401070918313114651', 'url' => 'http://pool.burstcoin.eu'),
-	6 => array('name' => 'Burstcoin.de Pool', 'addr' => '15291186589713514299', 'url' => 'http://pool.burstcoin.de/'),
-	7 => array('name' => 'Burst4All Pool', 'addr' => '16550913052977077387', 'url' => 'http://pool.burst4all.com/'),
-	8 => array('name' => 'BurstCoin.ml Pool', 'addr' => '13210932244776097704', 'url' => 'http://pool.burstcoin.ml:8020/'),
-	9 => array('name' => 'burst.lexitoshi.uk', 'addr' => '16732464642587527083', 'url' => 'http://burst.lexitoshi.uk'),
-	10 => array('name' => 'tross BurstCoin Pool', 'addr' => '3195398293854632251', 'url' => 'http://burstpool.ddns.net/'),
+    array('name' => 'FastPool.info', 'addr' => '611266021200711189', 'url' => 'https://fastpool.info/'),
+    array('name' => '100pb.online', 'addr' => '10028292625366045160', 'url' => 'http://100pb.online/'),
+    array('name' => 'burst.ninja', 'addr' => '7979631613202555765', 'url' => 'http://burst.ninja/'),
+    array('name' => 'BurstCoin.ml', 'addr' => '13210932244776097704','url' => 'http://pool.burstcoin.ml:8020/'),
+    array('name' => 'Burstcoin.de', 'addr' => '15291186589713514299', 'url' => 'http://pool.burstcoin.de/'),
+    array('name' => 'pool.poolofd32th.club', 'addr' => '2311656582822632451', 'url' => 'http://pool.poolofd32th.club/'),
+    array('name' => 'xen.poolofd32th.club', 'addr' => '4736628939229308608', 'url' => 'http://xen.poolofd32th.club/'),
+    array('name' => 'pool.burstcoin.ro', 'addr' => '15587859947385731145', 'url' => 'http://pool.burstcoin.ro/'),
 );
 
 

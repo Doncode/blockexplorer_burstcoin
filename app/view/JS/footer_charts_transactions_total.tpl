@@ -4,7 +4,7 @@ $(function() {
 	  text: 'Total Number Of Transactions'
       },
       subtitle: {
-	  text: 'Source: burstcoin.biz'
+	  text: 'Source: Burstcoin'
       },
       xAxis: {
 	  type: 'datetime',

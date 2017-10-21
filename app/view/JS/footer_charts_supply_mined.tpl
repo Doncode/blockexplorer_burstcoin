@@ -10,7 +10,7 @@ $(function() {
 	  text: 'Total Mined Burstcoins'
       },
       subtitle: {
-	  text: 'Source: burstcoin.biz'
+	  text: 'Source: Burstcoin'
       },
       tooltip: {
 	  pointFormat: '{literal}Mining progress: <b>{point.percentage:.2f}%</b>{/literal}'
